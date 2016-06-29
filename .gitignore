@@ -1,0 +1,7 @@
+# Vagrant VM directory
+.vagrant/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class

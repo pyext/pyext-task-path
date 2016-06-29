@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+export _VAGRANT_DIR="/vagrant"
+export _PROVISION_DIR="$_VAGRANT_DIR/scripts/vagrant"
+export _CONTENT_DIR="$_PROVISION_DIR/content"
+export _SCRIPTS_DIR="$_PROVISION_DIR/scripts"
+
+# update before provisioning
+sudo apt-get update -y
+
+"$_SCRIPTS_DIR/install_essentials.sh"
+
+"$_SCRIPTS_DIR/install_python.sh"
+
+# add custom content to .bashrc
+cat "$_CONTENT_DIR/home/vagrant/.bashrc" >> /home/vagrant/.bashrc
